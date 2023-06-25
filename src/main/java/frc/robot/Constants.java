@@ -34,20 +34,21 @@ public final class Constants {
 
     //Motors
 
-    public static CANSparkMax RF =  new CANSparkMax(2, MotorType.kBrushless);
-    public static CANSparkMax RB =  new CANSparkMax(4, MotorType.kBrushless);
-    public static CANSparkMax LF =  new CANSparkMax(1, MotorType.kBrushless);
-    public static CANSparkMax LB =  new CANSparkMax(3, MotorType.kBrushless);
+    public static CANSparkMax FL =  new CANSparkMax(2, MotorType.kBrushless);
+    public static CANSparkMax BL =  new CANSparkMax(4, MotorType.kBrushless);
+    public static CANSparkMax FR =  new CANSparkMax(1, MotorType.kBrushless);
+    public static CANSparkMax BR =  new CANSparkMax(3, MotorType.kBrushless);
     public static CANSparkMax Test_Motor =  new CANSparkMax(5, MotorType.kBrushless);
 
     //Differential drive
 
    
-    MecanumDrive m_robotDrive = new MecanumDrive(LF, LB, RF, RB);
+    public static MecanumDrive m_robotDrive = new MecanumDrive(FL, BL, FR, BR);
     
     //Joysicks
 
-    Joystick m_stick = new Joystick(0);
-    
-   
-}}
+    }
+    public static final class Vars{
+        public static final int m_DriverVar = 0;
+    }
+}

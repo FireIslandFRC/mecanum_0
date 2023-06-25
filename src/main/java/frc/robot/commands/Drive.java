@@ -4,24 +4,33 @@
 
 package frc.robot.commands;
 
+import frc.robot.subsystems.Drive_sub;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 
 /** An example command that uses an example subsystem. */
-public class ExampleCommand extends CommandBase {
+public class Drive extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ExampleSubsystem m_subsystem;
+  public Drive_sub subsystem;
+  public double x;
+  public double y;
+  public double omega;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ExampleCommand(ExampleSubsystem subsystem) {
-    m_subsystem = subsystem;
+  public Drive(Drive_sub subsystem, double x, double y, double omega) {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
+    this.subsystem = subsystem;
+    this.x = x;
+    this.y = y;
+    this.omega = omega;
   }
+
 
   // Called when the command is initially scheduled.
   @Override
@@ -29,7 +38,9 @@ public class ExampleCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    subsystem.drive(x, y, omega);
+  }
 
   // Called once the command ends or is interrupted.
   @Override
