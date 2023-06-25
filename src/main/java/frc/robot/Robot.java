@@ -24,8 +24,6 @@ public class Robot extends TimedRobot {
   
   private Command m_autonomousCommand;
 
-  private RobotContainer m_robotContainer;
-
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -36,9 +34,6 @@ public class Robot extends TimedRobot {
     RobotMap.FR.setInverted(true);
     RobotMap.FL.setInverted(true);
     RobotMap.BL.setInverted(true); // if you want to invert the entire side you can do so here
-    // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
-    // autonomous chooser on the dashboard.
-    m_robotContainer = new RobotContainer();
   }
 
   /**
