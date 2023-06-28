@@ -19,23 +19,20 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 public final class Constants {
    public static final class RobotMap{
 
-    //Motors
-
-    public static CANSparkMax FL =  new CANSparkMax(2, MotorType.kBrushless);
-    public static CANSparkMax BL =  new CANSparkMax(4, MotorType.kBrushless);
-    public static CANSparkMax FR =  new CANSparkMax(1, MotorType.kBrushless);
-    public static CANSparkMax BR =  new CANSparkMax(3, MotorType.kBrushless);
-    public static CANSparkMax Test_Motor =  new CANSparkMax(5, MotorType.kBrushless);
-
-    //Differential drive
-
+    //Motors controllers
+    public static CANSparkMax FL = new CANSparkMax(2, MotorType.kBrushless);
+    public static CANSparkMax BL = new CANSparkMax(4, MotorType.kBrushless);
+    public static CANSparkMax FR = new CANSparkMax(1, MotorType.kBrushless);
+    public static CANSparkMax BR = new CANSparkMax(3, MotorType.kBrushless);
+    public static CANSparkMax Test_Motor = new CANSparkMax(5, MotorType.kBrushless);
    
-    public static MecanumDrive m_robotDrive = new MecanumDrive(FL, BL, FR, BR);
+    //Mecanum drive setup
     
     //Joysicks
 
     }
     public static final class Vars{
+        //Controller port
         public static final int m_DriverVar = 0;
     }
 }

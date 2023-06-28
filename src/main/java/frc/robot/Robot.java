@@ -17,11 +17,14 @@ import frc.robot.subsystems.Drive_sub;
  * project.
  */
 public class Robot extends TimedRobot {
-  
+
+  //Var setup for OI
   public static OI m_oi = new OI();
+
+  //Var setup for Drivetrain subsystem
   public static Drive_sub m_drivetrain = new Drive_sub();
- 
   
+  //Var setup for Auto
   private Command m_autonomousCommand;
 
   /**
@@ -30,7 +33,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    
+    //Invert motors
     RobotMap.FR.setInverted(true);
     RobotMap.FL.setInverted(true);
     RobotMap.BL.setInverted(true); // if you want to invert the entire side you can do so here

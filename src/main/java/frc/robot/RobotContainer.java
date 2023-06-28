@@ -26,8 +26,8 @@ public class RobotContainer extends TimedRobot{
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
+    System.out.println("1");
     m_DriveSub.setDefaultCommand(
-
         new Drive(
           m_DriveSub,
           OI.strafeAxis,
