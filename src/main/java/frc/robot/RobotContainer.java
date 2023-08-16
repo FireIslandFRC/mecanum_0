@@ -7,6 +7,7 @@ package frc.robot;
 
 import frc.robot.commands.Drive;
 import frc.robot.subsystems.Drive_sub;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -18,21 +19,25 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer extends TimedRobot{
+
+  private final static Joystick driver = new Joystick(0);
+
   // The robot's subsystems and commands are defined here...
-  public final Drive_sub m_DriveSub = new Drive_sub();
+  public Drive_sub m_DriveSub = new Drive_sub();
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
+
     System.out.println("1");
     m_DriveSub.setDefaultCommand(
         new Drive(
           m_DriveSub,
-          OI.strafeAxis,
-          OI.translationAxis,
-          OI.rotationAxis
+          () -> driver.getRawAxis(driver.getXChannel()),
+          () -> driver.getRawAxis(driver.getYChannel()),
+          () -> driver.getRawAxis(driver.getZChannel())
           )
 
       );

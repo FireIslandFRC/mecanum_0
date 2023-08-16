@@ -23,7 +23,10 @@ public class Robot extends TimedRobot {
 
   //Var setup for Drivetrain subsystem
   public static Drive_sub m_drivetrain = new Drive_sub();
-  
+  RobotContainer m_robotContainer;
+
+
+
   //Var setup for Auto
   private Command m_autonomousCommand;
 
@@ -33,10 +36,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    RobotContainer m_RobotContainer = new RobotContainer();
+
     //Invert motors
-    RobotMap.FR.setInverted(true);
-    RobotMap.FL.setInverted(true);
-    RobotMap.BL.setInverted(true); // if you want to invert the entire side you can do so here
+    // if you want to invert the entire side you can do so here
   }
 
   /**
@@ -80,6 +83,9 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+    /*RobotMap.FR.setInverted(true);
+    RobotMap.FL.setInverted(true);
+    RobotMap.BR.setInverted(true); */
   }
 
   /** This function is called periodically during operator control. */

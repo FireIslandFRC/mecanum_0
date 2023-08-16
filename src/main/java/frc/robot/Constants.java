@@ -17,13 +17,14 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-   public static final class RobotMap{
+   public static class RobotMap{
 
     //Motors controllers
     public static CANSparkMax FL = new CANSparkMax(2, MotorType.kBrushless);
     public static CANSparkMax BL = new CANSparkMax(4, MotorType.kBrushless);
     public static CANSparkMax FR = new CANSparkMax(1, MotorType.kBrushless);
     public static CANSparkMax BR = new CANSparkMax(3, MotorType.kBrushless);
+    
     public static CANSparkMax Test_Motor = new CANSparkMax(5, MotorType.kBrushless);
    
     //Mecanum drive setup

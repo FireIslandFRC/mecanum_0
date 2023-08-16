@@ -15,7 +15,10 @@ public class Drive_sub extends SubsystemBase{
 
     public void drive(double vx, double vy, double omega) {
         m_robotDrive.driveCartesian(vx, vy, omega);
-        System.out.println("hiiiiiii");
+        System.out.println("X" + vx);
+        System.out.println("Y" + vy);
+        System.out.println("Omega" + omega);
+
     }
 
     public void stop() {
